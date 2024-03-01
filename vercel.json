@@ -1,0 +1,23 @@
+{
+  "redirects": [
+    {
+      "source": "/article/:path*",
+      "destination": "/posts/:path*"
+    },
+    {
+      "source": "/tutorial/:path*",
+      "destination": "/posts/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/posts/:path*",
+      "headers" : [
+        {
+          "key" : "Cache-Control",
+          "value" : "s-maxage=120, stale-while-revalidate"
+        }
+      ]
+    }
+  ]
+}

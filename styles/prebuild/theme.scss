@@ -1,0 +1,5 @@
+@mixin theme-dark {
+  @at-root #app-container[data-theme="dark"] {
+    @content;
+  }
+}

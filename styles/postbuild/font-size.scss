@@ -1,0 +1,15 @@
+:root {
+  --fz-text: 16px;
+  --fz-text-secondary: 14px;
+  --fz-title-h1: 36px;
+  --fz-title-h2: 32px;
+  --fz-title-h3: 28px;
+
+  @include from-sm {
+    --fz-text: 18px;
+    --fz-text-secondary: 14px;
+    --fz-title-h1: 36px;
+    --fz-title-h2: 32px;
+    --fz-title-h3: 28px;
+  }
+}

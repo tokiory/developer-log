@@ -1,0 +1,3 @@
+@mixin base-transition($properties...) {
+  transition: $properties 150ms ease-in-out;
+}

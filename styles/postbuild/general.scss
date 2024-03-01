@@ -1,0 +1,23 @@
+.app {
+  font-family: 'Montserrat Variable', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: var(--fz-text);
+  font-weight: 400;
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-13);
+  scroll-margin-top: 96px;
+  @include base-transition(background-color, color);
+
+  @include theme-dark {
+    background: var(--color-neutral-10);
+    color: var(--color-neutral-2);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --size-header: 96px;
+}
+

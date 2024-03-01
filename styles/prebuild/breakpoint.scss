@@ -1,0 +1,51 @@
+@use "sass:map";
+
+$breakpoints: (
+"xs": 0,
+"sm": 576px,
+"md": 768px,
+"lg": 992px,
+"xl": 1200px,
+"xxl": 1600px,
+);
+
+@mixin from-xs {
+  @media (min-width: map.get($breakpoints, "xs")) {
+    @content;
+  }
+}
+@mixin from-sm {
+  @media (min-width: map.get($breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin from-md {
+  @media (min-width: map.get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin from-lg {
+  @media (min-width: map.get($breakpoints, "lg")) {
+    @content;
+  }
+}
+@mixin from-xl {
+  @media (min-width: map.get($breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin from-xxl {
+  @media (min-width: map.get($breakpoints, "xxl")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp) {
+  @if map.has-key($breakpoints, $bp) {
+    @media (min-width: map.get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @warn "No such breakpoint `$bp`"
+  }
+}

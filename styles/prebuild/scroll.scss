@@ -1,0 +1,17 @@
+@mixin base-scroll($background: var(--color-neutral-3), $color: var(--color-red-normal)) {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: 2px;
+  }
+}

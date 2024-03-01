@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "app:dev",
+			"problemMatcher": [],
+			"label": "App: Development server",
+			"detail": "nuxt dev"
+		},
+		{
+			"type": "npm",
+			"script": "app:build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "App: Build",
+			"detail": "nuxt build"
+		},
+		{
+			"type": "npm",
+			"script": "app:analyze",
+			"problemMatcher": [],
+			"label": "App: Analyze",
+			"detail": "nuxi analyze"
+		}
+	]
+}

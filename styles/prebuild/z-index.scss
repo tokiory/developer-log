@@ -1,0 +1,19 @@
+@use "sass:list";
+
+// https://sass-lang.com/documentation/values/lists/
+$z-index:
+  header-menu,
+  header,
+  header-control,
+  zoom-image;
+
+@mixin zi($name) {
+  $idx: list.index($z-index, $name);
+
+  @if $idx {
+    z-index: $idx;
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from $z-index. Please make sure it is defined in `$breakpoints` map.";
+    z-index: 0;
+  }
+}

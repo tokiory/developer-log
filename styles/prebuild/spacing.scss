@@ -1,0 +1,30 @@
+@use "sass:list";
+
+$margin-size: (
+    small, medium, big, large
+);
+
+@mixin spacing-content {
+  padding: 32px 16px;
+
+  @include from-xl {
+    padding: 32px 32px 32px 92px;
+  }
+}
+
+@mixin spacing-layout {
+  padding: 20px 16px;
+
+  @include from-xl {
+    padding: 20px 92px;
+  }
+}
+
+// Calculates margin out of provided $px starting from tablet as 1.5 of the passed margin
+@mixin spacing-adaptive($direction, $px) {
+  margin-#{$direction}: $px;
+
+  @include from-md {
+    margin-#{$direction}: calc($px * 1.5);
+  }
+}
