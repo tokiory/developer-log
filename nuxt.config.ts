@@ -1,5 +1,12 @@
+import { globSync } from "glob";
 import type { NuxtConfig } from "nuxt/config";
 import { defineNuxtConfig } from "nuxt/config";
+
+const getPostsRoutes = () => {
+  return globSync("content/**/*.md").map(path => path.slice(7, -3));
+};
+
+getPostsRoutes();
 
 const developmentMode = process.env.NODE_ENV === "development";
 
@@ -178,6 +185,12 @@ export default defineNuxtConfig({
   router: {
     options: {
       sensitive: false,
+    },
+  },
+  nitro: {
+    prerender: {
+      // Generating posts at build time
+      routes: [ ...getPostsRoutes() ],
     },
   },
   css: [
