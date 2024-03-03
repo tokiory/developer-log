@@ -119,6 +119,9 @@ const vite: NuxtConfig["vite"] = {
 const content: NuxtConfig["content"] = {
   locales,
   defaultLocale: "ru",
+  experimental: {
+    cacheContents: true,
+  },
   highlight: {
     langs: [
       "typescript",
@@ -135,7 +138,7 @@ const content: NuxtConfig["content"] = {
       "docker",
       "dockerfile"
     ],
-    theme: "github-light",
+    theme: "min-dark"
   },
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
