@@ -15,9 +15,7 @@ export default defineNuxtModule<FeatureOptions>({
   setup(options, nuxt) {
 
     // Add module options to the runtimeConfig
-    nuxt.options.runtimeConfig.public[configKey] = defu(nuxt.options.runtimeConfig.public[configKey] as FeatureOptions, {
-      ...options,
-    });
+    nuxt.options.runtimeConfig.public[configKey] = defu(nuxt.options.runtimeConfig.public[configKey] as FeatureOptions, options);
 
     // Add useFeature composable
     const resolver = createResolver(import.meta.url);

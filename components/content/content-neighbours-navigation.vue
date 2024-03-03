@@ -149,4 +149,11 @@ const onNeighbourButtonClick = () => {
     }
   }
 }
+
+@include theme-dark {
+  .neighbours__link {
+    color: var(--color-neutral-3);
+  }
+}
+
 </style>

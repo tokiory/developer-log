@@ -1,8 +1,6 @@
 import type { NuxtConfig } from "nuxt/config";
 import { defineNuxtConfig } from "nuxt/config";
 
-const developmentMode = process.env.NODE_ENV === "development";
-
 const locales = [ "en", "ru", "ko", "be", "kk" ];
 
 const alias: NuxtConfig["alias"] = {
@@ -121,6 +119,9 @@ const vite: NuxtConfig["vite"] = {
 const content: NuxtConfig["content"] = {
   locales,
   defaultLocale: "ru",
+  experimental: {
+    cacheContents: true,
+  },
   highlight: {
     langs: [
       "typescript",
@@ -137,7 +138,7 @@ const content: NuxtConfig["content"] = {
       "docker",
       "dockerfile"
     ],
-    theme: "github-light",
+    theme: "min-dark"
   },
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -146,6 +147,13 @@ const content: NuxtConfig["content"] = {
       depth: 3
     },
   },
+};
+
+const feature: NuxtConfig["feature"] = {
+  THEME_SWITCH: true,
+  IMG_ZOOM: true,
+  DIAGRAM_ZOOM: true,
+  POST_NAVIGATION: true,
 };
 
 const runtimeConfig: NuxtConfig["runtimeConfig"] = {
@@ -160,13 +168,6 @@ const runtimeConfig: NuxtConfig["runtimeConfig"] = {
       },
       author: "Daniil Shilo <tokiory.personal@gmail.com>",
     },
-    features: {
-      IMG_ZOOM: true,
-      DIAGRAM_ZOOM: true,
-      COMMENTARIES: developmentMode,
-      POST_NAVIGATION: true,
-    },
-
   }
 };
 
@@ -186,6 +187,7 @@ export default defineNuxtConfig({
   devServer: {
     port: Number.parseInt(process.env.PORT ?? "8100"),
   },
+  feature,
   app,
   modules,
   vite,

@@ -26,10 +26,6 @@ defineProps<TextProperties>();
   letter-spacing: 0.27px;
   color: var(--color-neutral-13);
 
-  @include theme-dark {
-    color: var(--color-neutral-2);
-  }
-
   &.inline {
     display: inline;
   }
@@ -45,6 +41,12 @@ defineProps<TextProperties>();
   &.secondary {
     font-size: var(--fz-text-secondary);
     letter-spacing: 0.21px;
+  }
+}
+
+@include theme-dark {
+  .text {
+    color: var(--color-neutral-2);
   }
 }
 </style>

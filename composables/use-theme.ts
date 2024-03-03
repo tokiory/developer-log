@@ -1,7 +1,7 @@
 import { useFeature, useLocalStorageState } from "#imports";
 import cookieKey from "@/data/cookie-key";
 import localStorageKey from "@/data/local-storage-key";
-import type { Theme } from "@t/theme";
+import type { Theme } from "@/types/theme";
 
 export default function () {
   const cookieTheme = useCookie<Theme>(cookieKey.theme);
