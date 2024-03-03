@@ -34,6 +34,7 @@ const nuxtLinkProperties = computed(() => {
 .link {
   display: inline-block;
   cursor: pointer;
+  color: inherit;
   &.color {
     color: var(--color-red-dark);
   }

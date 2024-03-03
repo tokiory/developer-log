@@ -24,6 +24,11 @@ defineProps<TextProperties>();
   font-size: var(--fz-text);
   line-height: 120%;
   letter-spacing: 0.27px;
+  color: var(--color-neutral-13);
+
+  @include theme-dark {
+    color: var(--color-neutral-2);
+  }
 
   &.inline {
     display: inline;
