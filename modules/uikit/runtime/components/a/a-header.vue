@@ -49,7 +49,10 @@
           </ALink>
         </li>
       </ul>
-      <ThemeSwitcher class="header__theme" />
+      <ThemeSwitcher
+        v-if="hasThemeFeature"
+        class="header__theme"
+      />
       <HeaderBurger
         v-model="isHeaderMenuActive"
         class="header__burger"
@@ -69,6 +72,7 @@ import navigation from "@/data/navigation";
 import { capitalize } from "vue";
 const isHeaderMenuActive = ref(false);
 const localePath = useLocalePath();
+const hasThemeFeature = useFeature("THEME_SWITCH");
 </script>
 
 <style lang="scss" scoped>
