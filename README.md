@@ -1,4 +1,4 @@
-![Github Banner](https://github.com/developer-log/blog/assets/101672047/3e31b542-9423-4374-b2ab-e3a8c1d86171)
+![Github Banner](https://github.com/tokiory/developer-log/assets/101672047/8567e1b9-adc0-4aec-a0da-a9b0f15f5ccd)
 
 In the bustling realm of technology, where innovation is the heartbeat, "Developer Log" emerges as a guiding light for both seasoned developers and aspiring enthusiasts alike. This unique blog serves as a sanctuary for code aficionados, offering a rich tapestry of insights, experiences, and solutions in the ever-evolving world of software development.
 
