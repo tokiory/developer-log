@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "app:build": "nuxt build",
+    "release": "changelogen --release",
     "app:dev": "nuxt dev",
     "app:run": "node ./.output/server/index.mjs",
     "app:analyze": "nuxi analyze",
@@ -30,6 +31,7 @@
     "@types/node": "^20.11.24",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
+    "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-editorconfig": "^4.0.3",
@@ -61,5 +63,6 @@
     "satori-html": "^0.3.2",
     "sharp": "^0.33.2",
     "zod": "^3.22.4"
-  }
+  },
+  "version": "1.0.0"
 }
