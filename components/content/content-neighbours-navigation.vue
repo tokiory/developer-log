@@ -2,8 +2,9 @@
   <div
     class="neighbours"
   >
-    <a
+    <ALink
       v-if="neighbours[0]"
+      external
       class="neighbours__link"
       :href="localePath(neighbours[0]._path)"
     >
@@ -13,7 +14,10 @@
         @click="onNeighbourButtonClick"
       >
         <div class="neighbours__navigation">
-          <Icon name="uil:angle-left-b" />
+          <Icon
+            class="neighbours__icon"
+            name="uil:angle-left-b"
+          />
           <AText>
             {{ $t("page.post.neighbours.previous") }}
           </AText>
@@ -25,9 +29,10 @@
           {{ neighbours[0]?.title }}
         </AText>
       </AButton>
-    </a>
-    <a
+    </ALink>
+    <ALink
       v-if="neighbours[1]"
+      external
       class="neighbours__link neighbours__link_right"
       :href="localePath(neighbours[1]._path)"
     >
@@ -40,7 +45,10 @@
           <AText class="neighbours__text">
             {{ $t("page.post.neighbours.next") }}
           </AText>
-          <Icon name="uil:angle-right-b" />
+          <Icon
+            class="neighbours__icon"
+            name="uil:angle-right-b"
+          />
         </div>
         <AText
           secondary
@@ -49,7 +57,7 @@
           {{ neighbours[1]?.title }}
         </AText>
       </AButton>
-    </a>
+    </ALink>
   </div>
 </template>
 
@@ -94,6 +102,11 @@ const onNeighbourButtonClick = () => {
 
   &__link {
     width: 100%;
+    color: var(--color-neutral-13);
+
+    @include theme-dark {
+      color: var(--color-neutral-3);
+    }
 
     @include from-md {
       width: fit-content;
