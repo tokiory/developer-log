@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/tokiory/developer-log/compare/v1.1.0...v1.2.0)
+
+### 🚀 Enhancements
+
+- **technologie-stack:** Add font ([7d87566](https://github.com/tokiory/developer-log/commit/7d87566))
+
+### 🤖 CI
+
+- **deploy:** Add workflow dispatch on new tag ([cdf4835](https://github.com/tokiory/developer-log/commit/cdf4835))
+
+### ❤️ Contributors
+
+- Daniil Shilo ([@tokiory](http://github.com/tokiory))
+
 ## v1.1.0
 
 
