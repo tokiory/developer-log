@@ -39,6 +39,11 @@ export default {
       title: "hardware.cliEditor",
       value: "Neovim",
       url: "https://neovim.io/"
+    },
+    {
+      title: "hardware.font",
+      value: "Github's Neon Monospace",
+      url: "https://monaspace.githubnext.com/"
     }
   ]
 };

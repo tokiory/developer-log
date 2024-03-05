@@ -57,7 +57,8 @@ export default defineI18nLocale(async () => {
       keyboard: "Keyboard",
       pc: "Main PC",
       search: "Search",
-      terminal: "Terminal"
+      terminal: "Terminal",
+      font: "Font",
     },
     stack: {
       purpose: {
