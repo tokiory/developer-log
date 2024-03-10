@@ -87,6 +87,41 @@ const projects: ProjectContent = {
       ]
     },
     {
+      name: "Don't Do",
+      stack: {
+        primary: [
+          "typescript",
+          "react",
+          "redux",
+          "bun",
+          "sass"
+        ],
+        additional: [
+          "eslint",
+          "stylelint",
+          "vite",
+          "uvu",
+        ]
+      },
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/tokiory/dontdo"
+        },
+        {
+          type: "other",
+          url: "https://dontdo.vercel.app"
+        }
+      ],
+      description: {
+        short: "projects.dontdo.short",
+        long: [
+          "projects.dontdo.long.1",
+          "projects.dontdo.long.2",
+        ]
+      }
+    },
+    {
       name: "Capybara",
       stack: {
         primary: [

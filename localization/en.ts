@@ -41,6 +41,13 @@ export default defineI18nLocale(async () => {
           2: "I spent a little over a year developing this blog (this version is already the 3rd iteration), the main audience comes to this blog from other portals. This project is an accumulation of my knowledge from different industries."
         }
       },
+      dontdo: {
+        short: "To-do list management app",
+        long: {
+          1: "Don't Do - a simple to-do management app. I tried to make it as minimalistic as possible. Instead of directories and groups - tags, instead of a huge number of filters - search with its own syntax. I use it all the time to make my applications.",
+          2: "Despite the fact that \"Don't Do\" was made in a couple of weekends, this application is one of my favorite applications",
+        }
+      },
       capybara: {
         short: "Cross-platform code review application",
         long: {
