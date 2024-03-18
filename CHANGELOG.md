@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.3.0
+
+[compare changes](https://github.com/tokiory/developer-log/compare/v1.2.0...v1.3.0)
+
+### 🚀 Enhancements
+
+- **projects:** Add dontdo project ([2ccb352](https://github.com/tokiory/developer-log/commit/2ccb352))
+- **post:** Add js-bit post ([9418080](https://github.com/tokiory/developer-log/commit/9418080))
+- **post:** Add js-bit post ([4e3380f](https://github.com/tokiory/developer-log/commit/4e3380f))
+- **shiki:** Add shiki composable ([c34b35d](https://github.com/tokiory/developer-log/commit/c34b35d))
+- **content-diagram:** Add diagram max-width ([e8db38d](https://github.com/tokiory/developer-log/commit/e8db38d))
+
+### 🩹 Fixes
+
+- **idea:** Fixed vcs mappings ([4198f42](https://github.com/tokiory/developer-log/commit/4198f42))
+
+### ❤️ Contributors
+
+- Daniil Shilo ([@tokiory](http://github.com/tokiory))
+
 ## v1.2.0
 
 [compare changes](https://github.com/tokiory/developer-log/compare/v1.1.0...v1.2.0)
