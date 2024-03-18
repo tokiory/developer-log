@@ -16,23 +16,28 @@
         <Icon name="uil:copy" />
       </button>
     </div>
-    <slot />
+    <div v-html="output" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { useShiki } from "~/composables/use-shiki";
+import { type BundledLanguage } from "shiki";
+
 interface ProseCodeProperties {
   code: string;
-  language: string;
+  language: BundledLanguage;
   filename?: string;
   highlights?: number[];
   meta?: string;
 }
 
 const properties = defineProps<ProseCodeProperties>();
+const { code, language } = toRefs(properties);
+const { output } = await useShiki({ code, language });
 const copied = ref(false);
 const path = computed(() => {
-  if (properties.language === "output") {
+  if (properties.language as string === "output") {
     return "Output";
   }
 
@@ -71,6 +76,9 @@ const copy = async () => {
     font-family: 'JetBrains Mono', Fira Code, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
     font-size: 14px;
     letter-spacing: 0.7px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
   }
 
   // Result styling
