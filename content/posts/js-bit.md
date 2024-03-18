@@ -61,7 +61,7 @@ console.log(0b1000 & 0b1100) // 1000 => 8
 console.log(0b1111 & 0b1111) // 1111 => 1 + 2 + 4 + 8 => 15
 ```
 
-::ContentDiagram{src="/posts/js-bit/js-bit-2.svg"}
+::ContentDiagram{src="/posts/js-bit/js-bit-2.svg" max-width="400px"}
 ::
 
 ## «Битовый ИЛИ»: `|`
@@ -72,7 +72,7 @@ console.log(0b1000 | 0b1100) // 1100 => 12
 console.log(0b1111 | 0b1111) // 1111 => 1 + 2 + 4 + 8 => 15
 ```
 
-::ContentDiagram{src="/posts/js-bit/js-bit-3.svg"}
+::ContentDiagram{src="/posts/js-bit/js-bit-3.svg" max-width="400px"}
 ::
 
 ## «Битовый НЕ»: `~`

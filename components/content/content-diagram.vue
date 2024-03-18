@@ -19,6 +19,7 @@
       </div>
       <div
         v-else-if="scheme"
+        :style="diagramStyle"
         class="diagram__content"
         role="button"
         tabindex="0"
@@ -33,9 +34,12 @@
 <script setup lang="ts">
 interface ContentSchemeProperties {
   src: string;
+  maxWidth?: string;
 }
 
-const properties = defineProps<ContentSchemeProperties>();
+const properties = withDefaults(defineProps<ContentSchemeProperties>(), {
+  maxWidth: "100%",
+});
 const requestURL = useRequestURL();
 const diagramZoom = useDiagramZoom();
 
@@ -60,6 +64,12 @@ const showZoomPreview = (event: PointerEvent) => {
 
   diagramZoom.show(scheme.value!);
 };
+
+const diagramStyle = computed(() => {
+  return {
+    maxWidth: properties.maxWidth,
+  };
+});
 </script>
 
 <style scoped lang="scss">
@@ -87,10 +97,14 @@ const showZoomPreview = (event: PointerEvent) => {
     height: fit-content;
   }
 
-  &__content:deep(svg) {
-    width: 100%;
-    height: fit-content;
-    font-family: "Virgil", 'Montserrat Variable', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  &__content {
+    margin: 0 auto;
+
+    &:deep(svg) {
+      width: 100%;
+      height: fit-content;
+      font-family: "Virgil", 'Montserrat Variable', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    }
   }
 }
 
