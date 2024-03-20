@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.4.0
+
+[compare changes](https://github.com/tokiory/developer-log/compare/v1.3.0...v1.4.0)
+
+### 🚀 Enhancements
+
+- **code:** Add dynamic import of bundles ([1351de4](https://github.com/tokiory/developer-log/commit/1351de4))
+
+### ❤️ Contributors
+
+- Daniil Shilo ([@tokiory](http://github.com/tokiory))
+
 ## v1.3.0
 
 [compare changes](https://github.com/tokiory/developer-log/compare/v1.2.0...v1.3.0)
