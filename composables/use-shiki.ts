@@ -1,5 +1,5 @@
 import { createCssVariablesTheme } from "shiki";
-import { type BundledLanguage, getHighlighter } from "shiki/bundle/full";
+import type { BundledLanguage } from "shiki/bundle/full";
 import type { Ref } from "vue";
 
 interface ShikiParameters {
@@ -15,12 +15,12 @@ const cssVariablesTheme = createCssVariablesTheme({
 });
 
 export const useShiki = async ({ code, language }: ShikiParameters) => {
-  const highlighter = await getHighlighter({
-    langs: [ language.value ],
-    themes: [ cssVariablesTheme ],
-  });
-
-  const output = computed(() => {
+  const { data } = useAsyncData(async () => {
+    const { getHighlighter } = await import("shiki/bundle/full");
+    const highlighter = await getHighlighter({
+      langs: [ language.value ],
+      themes: [ cssVariablesTheme ],
+    });
     return highlighter.codeToHtml(code.value.trim(), {
       theme: cssVariablesTheme,
       lang: language.value,
@@ -28,6 +28,6 @@ export const useShiki = async ({ code, language }: ShikiParameters) => {
   });
 
   return {
-    output,
+    data,
   };
 };

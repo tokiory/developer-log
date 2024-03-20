@@ -34,7 +34,7 @@ interface ProseCodeProperties {
 
 const properties = defineProps<ProseCodeProperties>();
 const { code, language } = toRefs(properties);
-const { output } = await useShiki({ code, language });
+const { data: output } = await useShiki({ code, language });
 const copied = ref(false);
 const path = computed(() => {
   if (properties.language as string === "output") {
