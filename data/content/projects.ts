@@ -146,6 +146,56 @@ const projects: ProjectContent = {
           "projects.capybara.long.2",
         ]
       }
+    },
+    {
+      name: "Term Portfolio",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/tokiory/term-portfolio"
+        },
+        {
+          type: "other",
+          url: "https://tokiory.vercel.app/"
+        }
+      ],
+      stack: {
+        primary: [
+          "vue",
+          "typescript"
+        ],
+        additional: [
+          "eslint",
+          "vite",
+        ]
+      },
+      description: {
+        short: "projects.termprofile.short",
+        long: [
+          "projects.termprofile.long.1",
+        ]
+      }
+    },
+    {
+      name: "Gosha",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/tokiory/gosha"
+        },
+      ],
+      stack: {
+        primary: [
+          "go"
+        ],
+        additional: []
+      },
+      description: {
+        short: "projects.gosha.short",
+        long: [
+          "projects.gosha.long.1",
+        ]
+      }
     }
   ]
 };

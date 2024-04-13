@@ -54,7 +54,19 @@ export default defineI18nLocale(async () => {
           1: "Capybara is a cross-platform code review application that is designed to make the code review process easier.",
           2: "The application has integration with Github and Gitlab, and can also work offline with a local repository."
         }
-      }
+      },
+      termprofile: {
+        short: "Portfolio in the form of a terminal",
+        long: {
+          1: "Term Portfolio is a small project that implements a terminal interface in the browser. In this project I messed around with ASCII images and interesting features",
+        }
+      },
+      gosha: {
+        short: "Terminal task manager",
+        long: {
+          1: "Gosha is a simple Go console application that I made to quickly edit my current daily plan and also to learn the basics of Go.",
+        }
+      },
     },
     hardware: {
       theme: "Colorscheme",
