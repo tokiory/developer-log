@@ -57,6 +57,7 @@ export default defineI18nLocale(async () => {
       }
     },
     hardware: {
+      theme: "Тэма",
       browser: "Браўзэр",
       cliEditor: "Кансольны рэдактар",
       editor: "Рэдактар",

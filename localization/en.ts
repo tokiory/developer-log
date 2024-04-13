@@ -57,6 +57,7 @@ export default defineI18nLocale(async () => {
       }
     },
     hardware: {
+      theme: "Colorscheme",
       browser: "Browser",
       cliEditor: "Console editor",
       editor: "Editor",

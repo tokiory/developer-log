@@ -138,7 +138,10 @@ const content: NuxtConfig["content"] = {
       "docker",
       "dockerfile"
     ],
-    theme: "min-dark"
+    theme: {
+      default: "vitesse-light",
+      dark: "vitesse-dark",
+    }
   },
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore

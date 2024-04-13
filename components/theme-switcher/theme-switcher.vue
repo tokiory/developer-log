@@ -8,6 +8,7 @@
     <Transition
       type="transition"
     >
+      <!-- There's two elements for transition animation -->
       <Icon
         v-if="theme === 'dark'"
         class="theme-switcher__icon"
@@ -28,7 +29,17 @@
 import { useTheme } from "#imports";
 import localStorageKey from "@/data/local-storage-key";
 
+import { loadIcon } from "@iconify/utils";
+
 const { theme } = useTheme();
+
+useAsyncData(async () => {
+  await loadIcon("fe", "sunny-o");
+  await loadIcon("uil", "moon");
+}, {
+  server: false,
+  immediate: true,
+});
 
 const onClick = () => {
   const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";

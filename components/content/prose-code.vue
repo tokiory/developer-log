@@ -16,12 +16,11 @@
         <Icon name="uil:copy" />
       </button>
     </div>
-    <div v-html="output" />
+    <slot />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useShiki } from "~/composables/use-shiki";
 import { type BundledLanguage } from "shiki";
 
 interface ProseCodeProperties {
@@ -33,8 +32,6 @@ interface ProseCodeProperties {
 }
 
 const properties = defineProps<ProseCodeProperties>();
-const { code, language } = toRefs(properties);
-const { data: output } = await useShiki({ code, language });
 const copied = ref(false);
 const path = computed(() => {
   if (properties.language as string === "output") {

@@ -51,6 +51,7 @@ export default defineI18nLocale(async () => {
       }
     },
     hardware: {
+      theme: "색상 테마",
       browser: "브라우저",
       cliEditor: "콘솔 편집기",
       editor: "편집자",

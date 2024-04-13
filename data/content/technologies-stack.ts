@@ -42,8 +42,13 @@ export default {
     },
     {
       title: "hardware.font",
-      value: "Github's Neon Monospace",
+      value: "Geist Mono",
       url: "https://monaspace.githubnext.com/"
+    },
+    {
+      title: "hardware.theme",
+      value: "Vitesse Dark",
+      url: "https://github.com/antfu/vscode-theme-vitesse"
     }
   ]
 };
