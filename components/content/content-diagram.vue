@@ -41,7 +41,7 @@ const properties = withDefaults(defineProps<ContentSchemeProperties>(), {
   maxWidth: "100%",
 });
 const requestURL = useRequestURL();
-const diagramZoom = useDiagramZoom();
+const diagramZoom = useZoom();
 
 // TODO: Make a composable with all features
 const hasZoomFeature = useFeature("DIAGRAM_ZOOM");
@@ -62,7 +62,7 @@ const showZoomPreview = (event: PointerEvent) => {
   if (event.pointerType !== "mouse")
     return;
 
-  diagramZoom.show(scheme.value!);
+  diagramZoom.show("diagram", scheme.value!);
 };
 
 const diagramStyle = computed(() => {

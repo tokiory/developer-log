@@ -17,7 +17,7 @@ interface ProseImgProperties {
 
 const properties = defineProps<ProseImgProperties>();
 const requestURL = useRequestURL();
-const imageZoom = useImageZoom();
+const imageZoom = useZoom();
 const isZoomFeatureEnabled = useFeature("IMG_ZOOM");
 
 const fullpath = computed(() => {
@@ -26,7 +26,7 @@ const fullpath = computed(() => {
 });
 
 const showZoomPreview = () => {
-  isZoomFeatureEnabled && imageZoom.show(fullpath.value) ;
+  isZoomFeatureEnabled && imageZoom.show("image", fullpath.value) ;
 };
 </script>
 

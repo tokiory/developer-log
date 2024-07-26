@@ -67,8 +67,7 @@
         />
       </div>
     </div>
-    <ContentImageZoom />
-    <ContentDiagramZoom />
+    <MediaZoom />
   </div>
 </template>
 

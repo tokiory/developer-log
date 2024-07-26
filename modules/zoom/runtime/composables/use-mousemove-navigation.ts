@@ -7,18 +7,14 @@ interface Coordinates {
 
 const getImageViewportPercentageModifier = (elementInformation: ComputedRef<DOMRect>): Coordinates => {
   const imageVisibleViewport = {
-    width: elementInformation.value.width > window.innerWidth
-      ? window.innerWidth
-      : elementInformation.value.width,
+    width: elementInformation.value.width > window.innerWidth ? window.innerWidth : elementInformation.value.width,
 
-    height: elementInformation.value.height > window.innerHeight
-      ? window.innerHeight
-      : elementInformation.value.height,
+    height: elementInformation.value.height > window.innerHeight ? window.innerHeight : elementInformation.value.height,
   };
 
   return {
     x: imageVisibleViewport.width / 100,
-    y: imageVisibleViewport.height / 100
+    y: imageVisibleViewport.height / 100,
   };
 };
 
@@ -47,7 +43,7 @@ const getMouseCenterRelativePercentages = (mousePositionPercentages: Coordinates
 
 export default function (elementReference: Ref<HTMLElement | undefined>) {
   const isActive = ref(false);
-  const toggle = (state: boolean) => isActive.value = state;
+  const toggle = (state: boolean) => (isActive.value = state);
   const reload = () => {
     isActive.value = false;
     isActive.value = true;
@@ -63,10 +59,7 @@ export default function (elementReference: Ref<HTMLElement | undefined>) {
       return;
     }
 
-    const imagePercentageModifier =
-      getImageViewportPercentageModifier(
-        elementInformation as ComputedRef<DOMRect>
-      );
+    const imagePercentageModifier = getImageViewportPercentageModifier(elementInformation as ComputedRef<DOMRect>);
 
     const absoluteMousePositionPercentage: Coordinates = {
       x: Math.round(event.x / imagePercentageModifier.x),
@@ -78,7 +71,15 @@ export default function (elementReference: Ref<HTMLElement | undefined>) {
     elementReference.value.style.translate = `${centerMousePositionPercentage.x}% ${centerMousePositionPercentage.y}%`;
   };
 
-  watch(isActive, state => {
+  const resetPosition = () => {
+    if (!elementReference.value) {
+      return;
+    }
+
+    elementReference.value.style.translate = "";
+  };
+
+  watch(isActive, (state) => {
     if (!elementReference.value) {
       return;
     }
@@ -93,6 +94,7 @@ export default function (elementReference: Ref<HTMLElement | undefined>) {
   });
   return {
     toggle,
+    resetPosition,
     reload,
   };
 }
