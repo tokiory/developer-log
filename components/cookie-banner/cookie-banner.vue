@@ -90,13 +90,6 @@ const handleAccept = () => {
   }
 }
 
-//@at-root body[data-theme=dark] {
-//  .banner__wrapper {
-//    background: var(--color-neutral-10);
-//    border-color: var(--color-green-normal-active);
-//  }
-//}
-
 @include theme-dark {
   .banner__wrapper {
     background: var(--color-neutral-10);

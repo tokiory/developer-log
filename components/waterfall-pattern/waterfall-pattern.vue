@@ -35,8 +35,6 @@ withDefaults(defineProps<WaterfallProperties>(), {
       left: 50%;
       transform-origin: left;
       transform: translateX(-50%);
-      //translate: 100% calc(100% + 200px);
-      //translate: 150px 0;
       scale: 1;
       border-radius: 100%;
       animation: 5s ease-in-out heartbeat infinite alternate;
@@ -198,10 +196,6 @@ withDefaults(defineProps<WaterfallProperties>(), {
       }
     }
     .line {
-      //background: #F38888;
-      //&::after {
-      //  background: linear-gradient(180deg, rgba(255, 203, 101, 0.00) 0%, #fd5353 100%);
-      //}
       background: rgb(40, 201, 97);
       &::after {
         background: linear-gradient(180deg, rgba(0,0,0,0), #32e87c);
@@ -211,7 +205,6 @@ withDefaults(defineProps<WaterfallProperties>(), {
       background: linear-gradient(180deg, #4C8993 0%, rgba(77, 169, 139, 0.94) 68.63%);
       &::after {
         background: linear-gradient(180deg, #82C152, #76BB69, #4DA58C);
-        //background: linear-gradient(180deg, #FFB6CD 0%, #f87ea1 37.36%);
       }
     }
   }
