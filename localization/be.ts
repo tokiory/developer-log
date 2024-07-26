@@ -69,6 +69,12 @@ export default defineI18nLocale(async () => {
       },
     },
     hardware: {
+      tabs: {
+        primary: "Асноўнае",
+        secondary: "Дадатковае",
+      },
+      secondaryEditor: "Другасны рэдактар",
+      secondaryPc: "Другасны ПК",
       theme: "Тэма",
       browser: "Браўзэр",
       cliEditor: "Кансольны рэдактар",

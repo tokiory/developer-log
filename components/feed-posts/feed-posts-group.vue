@@ -1,10 +1,8 @@
 <template>
   <div class="posts-group">
-    <!--    <ClientOnly>-->
     <AText class="posts-group__date">
       {{ date }}
     </AText>
-    <!--    </ClientOnly>-->
     <ul
       ref="groupReference"
       class="posts-group__list"

@@ -24,9 +24,15 @@
         layout="row"
         class="content__professional"
       />
+      <ATabSelect
+        v-model="currentTechTab"
+        class="content__tech-tabs"
+        :tabs="techTabs"
+      />
+
       <LazyTechnologiesStack
         class="content__tech"
-        v-bind="technologiesStackContent"
+        :list="technologiesStackContent[currentTechTab]"
       />
     </section>
     <section class="author__waterfall waterfall">
@@ -58,6 +64,11 @@ useSeoMeta({
     author: "Daniil Shilo (tokiory) <tokiory.personal@gmail.com>",
   }),
 });
+
+const { options: techTabs, currentTab: currentTechTab } = useTabSelect({
+  primary: t("hardware.tabs.primary"),
+  secondary: t("hardware.tabs.secondary"),
+});
 </script>
 
 <style lang="scss" scoped>
@@ -69,14 +80,22 @@ useSeoMeta({
 .content {
   @include spacing-content;
 
-  &__professional,
+  &__tech-tabs {
+    @include spacing-adaptive(top, 24px);
+  }
+
   &__tech {
+    @include spacing-adaptive(top, 10px);
+  }
+
+  &__professional {
     @include spacing-adaptive(top, 24px);
   }
 }
 
 .title {
   color: var(--color-red-dark);
+
   &__image {
     height: 24px;
   }
@@ -101,6 +120,7 @@ useSeoMeta({
 
 @include from-md {
   .content {
+
     &__professional,
     &__tech {
       max-width: 1064px;

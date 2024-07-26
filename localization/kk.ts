@@ -69,6 +69,12 @@ export default defineI18nLocale(async () => {
       },
     },
     hardware: {
+      tabs: {
+        primary: "Негіздер",
+        secondary: "Қосымша",
+      },
+      secondaryEditor: "Қосымша редактор",
+      secondaryPc: "Қосымша ДК",
       theme: "Тақырып",
       browser: "Браузер",
       cliEditor: "Консольдық редактор",

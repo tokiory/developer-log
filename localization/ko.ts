@@ -63,6 +63,12 @@ export default defineI18nLocale(async () => {
       },
     },
     hardware: {
+      tabs: {
+        primary: "기초",
+        secondary: "추가의",
+      },
+      secondaryEditor: "2차 편집자",
+      secondaryPc: "보조 PC",
       theme: "색상 테마",
       browser: "브라우저",
       cliEditor: "콘솔 편집기",

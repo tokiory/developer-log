@@ -69,6 +69,12 @@ export default defineI18nLocale(async () => {
       },
     },
     hardware: {
+      tabs: {
+        primary: "Primary",
+        secondary: "Secondary",
+      },
+      secondaryEditor: "Secondary editor",
+      secondaryPc: "Secondary PC",
       theme: "Colorscheme",
       browser: "Browser",
       cliEditor: "Console editor",
