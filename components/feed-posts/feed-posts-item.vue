@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PostItemContent } from "@/types/content";
+import type { PostItemContent } from "@/types/content/post";
 
 const localePath = useLocalePath();
 defineProps<PostItemContent>();

@@ -1,4 +1,4 @@
-import type { PostNavigationItem } from "@t/posts";
+import type { PostNavigationItem } from "@/types/posts";
 
 interface NuxtContentMeta {
   _id: string;

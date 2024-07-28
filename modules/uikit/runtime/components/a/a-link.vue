@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import type { NuxtLinkProps } from "#app";
+import { type NuxtLinkProps } from "nuxt/app";
 
-interface LinkProperties extends NuxtLinkProps {
+interface LinkProperties extends /** @vue-ignore */ NuxtLinkProps {
   color?: boolean;
   hover?: boolean;
 }
