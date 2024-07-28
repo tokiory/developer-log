@@ -7,8 +7,9 @@ export default defineNuxtModule({
   setup() {
     const resolver = createResolver(import.meta.url);
     addServerHandler({
-      route: "/rss.xml",
-      handler: resolver.resolve("runtime/server/routes/rss.get.ts"),
+      route: "/rss",
+      method: "get",
+      handler: resolver.resolve("runtime/server/routes/rss.ts"),
     });
   },
 });
