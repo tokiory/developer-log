@@ -145,6 +145,7 @@ watch(scaleModifier, modifier => {
   }
 
   &__control {
+    z-index: 2000;
     position: absolute;
     bottom: 32px;
     right: 32px;
@@ -152,7 +153,7 @@ watch(scaleModifier, modifier => {
   }
 
   &__text {
-    color: white;
+    color: black;
     mix-blend-mode: color-burn;
   }
 
@@ -161,6 +162,10 @@ watch(scaleModifier, modifier => {
 @include theme-dark {
   .image-zoom {
     background: rgba(0, 0, 0, 0.5);
+
+    &__text {
+        color: white;
+    }
 
     &__object {
       filter: invert(1);
