@@ -52,15 +52,16 @@
               {{ $t('page.privacy.title') }}
             </ALink>
           </li>
-          <!--          <li class="social__item">-->
-          <!--            <ALink-->
-          <!--              to="/rss"-->
-          <!--              color-->
-          <!--              class="social__link"-->
-          <!--            >-->
-          <!--              RSS-->
-          <!--            </ALink>-->
-          <!--          </li>-->
+          <li class="social__item">
+            <ALink
+              external
+              to="/rss"
+              color
+              class="social__link"
+            >
+              RSS
+            </ALink>
+          </li>
         </ul>
       </nav>
     </div>
