@@ -35,7 +35,7 @@
         </ATitle>
         <RecentPosts
           class="posts__list"
-          :posts="posts ?? []"
+          :posts="posts"
         />
       </div>
     </section>
@@ -59,8 +59,6 @@
 <script setup lang="ts">
 import { social } from "@/data/content";
 
-import type { PostItemContent } from "~/types/content";
-
 const { t } = useI18n();
 
 const url = useRequestURL();
@@ -77,33 +75,7 @@ useSeoMeta({
   }),
 });
 
-const { data: posts } = useAsyncData<PostItemContent[]>(async () => {
-  const fields: Array<keyof PostItemContent> = [
-    "_id",
-    "_path",
-    "title",
-    "date",
-    "tags",
-    "description",
-  ];
-
-  const posts = await queryContent<PostItemContent>()
-    .where({
-      _draft: { $ne: true },
-      _dir: { $eq: "posts" },
-    })
-    .only(fields)
-    .find();
-  posts.sort((a, b) => {
-    return Date.parse(b.date) - Date.parse(a.date);
-  });
-  return posts.slice(0, 5).map(item => {
-    return {
-      ...item,
-      tags: item.tags.slice(0, 2)
-    };
-  });
-});
+const { data: posts } = await usePosts({ limit: 5, tagLimit: 2 });
 </script>
 
 <style lang="scss" scoped>

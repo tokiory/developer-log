@@ -85,6 +85,14 @@ const image: NuxtConfig["image"] = {
   }
 };
 
+const imports: NuxtConfig["imports"] = {
+  dirs: [
+    "./modules",
+    "./types",
+    "./types/content",
+  ],
+};
+
 const i18n: NuxtConfig["i18n"] = {
   locales: locales.map(item => ({ code: item, iso: item, file: `${item}.ts` })),
   experimental: {
@@ -194,6 +202,7 @@ export default defineNuxtConfig({
   app,
   modules,
   vite,
+  imports,
   alias,
   i18n,
   content,

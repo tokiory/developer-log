@@ -4,7 +4,7 @@
   >
     <li
       v-for="post in posts"
-      :key="post"
+      :key="post._id"
       class="posts__item"
     >
       <RecentPostsItem

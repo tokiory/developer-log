@@ -50,10 +50,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { PostItemContent } from "@/types/content";
-import type { PostDateGroups, PostDateKey } from "@/types/posts";
+import type { PostDateGroups } from "@/types/posts";
 
 const { t, getLocaleCookie } = useI18n();
+const locale = getLocaleCookie() || "ru";
 const url = useRequestURL();
 
 useSeoMeta({
@@ -69,62 +69,38 @@ useSeoMeta({
 });
 
 const route = useRoute();
-const search = ref(route.query?.search ?? "");
+const search = ref(route.query?.search as string ?? "");
 const isNotesVisible = ref(true);
-
-const locale =  getLocaleCookie() ?? "ru";
 
 // Watch
 watch(() => route.query?.search, (v) => {
-  search.value = v ?? "";
+  search.value = (v ?? "") as string;
 });
 
-// Methods
-const groupPostsByDate = (posts: PostItemContent[]): PostDateGroups => {
-  const groups: PostDateGroups = new Map();
-
-  for (const post of posts) {
-    const date = new Date(post.date);
-    const dateKey = date.toLocaleDateString(locale, {
-      month: "short",
-      year: "numeric",
-    }) as PostDateKey;
-
-    if (groups.has(dateKey)) {
-      groups.set(dateKey,
-        [ ...groups.get(dateKey)!, post ]
-      );
-    } else {
-      groups.set(dateKey, [ post ]);
-    }
-  }
-
-  return groups;
-};
-
-const { data: posts, pending } = useAsyncData("posts", async () => {
-  const fields: Array<keyof PostItemContent> = [
-    "_id",
-    "_path",
-    "title",
-    "date",
-    "tags",
-    "description",
-    "keywords"
-  ];
-
-  // FIX: dir in "where" is temporary, 'cause `queryContent("posts")` doesn't work in production build 👺
-  const posts = await queryContent<PostItemContent>()
-    .where({
-      _draft: { $ne: true },
-      _dir: { $eq: "posts" },
-    })
-    .sort({ date: -1 })
-    .only(fields)
-    .find();
-
-  return groupPostsByDate(posts);
-});
+const { data: posts, pending } = await useGroupPosts({ locale });
+// const { data: posts, pending } = useAsyncData("posts", async () => {
+//   const fields: Array<keyof PostItemContent> = [
+//     "_id",
+//     "_path",
+//     "title",
+//     "date",
+//     "tags",
+//     "description",
+//     "keywords"
+//   ];
+//
+//   // FIX: dir in "where" is temporary, 'cause `queryContent("posts")` doesn't work in production build 👺
+//   const posts = await queryContent<PostItemContent>()
+//     .where({
+//       _draft: { $ne: true },
+//       _dir: { $eq: "posts" },
+//     })
+//     .sort({ date: -1 })
+//     .only(fields)
+//     .find();
+//
+//   return groupPostsByDate(posts);
+// });
 
 const filteredPosts = computed(() => {
   const filteredPostsGroups: PostDateGroups = new Map();
