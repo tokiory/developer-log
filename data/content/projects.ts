@@ -196,6 +196,27 @@ const projects: ProjectContent = {
           "projects.gosha.long.1",
         ]
       }
+    },
+    {
+      name: "Zed Gruvbox Material Theme",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/tokiory/zed-gruvbox-material"
+        },
+      ],
+      stack: {
+        primary: [
+          "go"
+        ],
+        additional: []
+      },
+      description: {
+        short: "projects.zedgruvbox.short",
+        long: [
+          "projects.zedgruvbox.long.1",
+        ]
+      }
     }
   ]
 };
