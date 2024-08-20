@@ -7,7 +7,7 @@ interface UsePostsArguments {
 }
 
 export const usePosts = ({ limit = 0, fields, tagLimit } = {} as UsePostsArguments) => {
-  return useAsyncData(async () => {
+  return useAsyncData("posts", async () => {
 
     const query = usePostQuery({ fields });
 

@@ -24,5 +24,10 @@ export default defineNuxtModule<FeatureOptions>({
       name: "useFeature",
       from: resolver.resolve("runtime/composable/use-feature/index")
     });
+
+    addImports({
+      name: "useFeatures",
+      from: resolver.resolve("runtime/composable/use-feature/index")
+    });
   },
 });

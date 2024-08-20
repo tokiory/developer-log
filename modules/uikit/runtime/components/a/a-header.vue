@@ -72,7 +72,7 @@ import navigation from "@/data/navigation";
 import { capitalize } from "vue";
 const isHeaderMenuActive = ref(false);
 const localePath = useLocalePath();
-const hasThemeFeature = useFeature("THEME_SWITCH");
+const { THEME_SWITCH: hasThemeFeature } = useFeatures();
 </script>
 
 <style lang="scss" scoped>

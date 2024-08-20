@@ -18,7 +18,7 @@ interface ProseImgProperties {
 const properties = defineProps<ProseImgProperties>();
 const requestURL = useRequestURL();
 const imageZoom = useZoom();
-const isZoomFeatureEnabled = useFeature("IMG_ZOOM");
+const { IMG_ZOOM: isZoomFeatureEnabled } = useFeatures();
 
 const fullpath = computed(() => {
   // eslint-disable-next-line compat/compat

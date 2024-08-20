@@ -18,11 +18,10 @@
 
 <script setup lang="ts">
 import "@fontsource-variable/montserrat";
-import { useFeature, useTheme } from "#imports";
 import selectors from "@/data/selectors";
 import "@style/index.scss";
 
-const hasCookieFeature = useFeature("COOKIE_BANNER");
+const { COOKIE_BANNER: hasCookieFeature } = useFeatures();
 const { theme, accentColor } = useTheme();
 </script>
 

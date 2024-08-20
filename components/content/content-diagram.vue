@@ -44,7 +44,7 @@ const requestURL = useRequestURL();
 const diagramZoom = useZoom();
 
 // TODO: Make a composable with all features
-const hasZoomFeature = useFeature("DIAGRAM_ZOOM");
+const { DIAGRAM_ZOOM: hasZoomFeature } = useFeatures();
 
 const { pending, data: scheme, error } = await useLazyAsyncData<string>(`${requestURL.pathname}-${properties.src}`, async () => {
   // eslint-disable-next-line compat/compat

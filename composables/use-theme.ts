@@ -1,11 +1,11 @@
-import { useFeature, useLocalStorageState } from "#imports";
+import { useLocalStorageState } from "#imports";
 import cookieKey from "@/data/cookie-key";
 import localStorageKey from "@/data/local-storage-key";
 import type { Theme } from "@/types/theme";
 
 export default function () {
   const cookieTheme = useCookie<Theme>(cookieKey.theme);
-  const hasThemeFeature = useFeature("THEME_SWITCH");
+  const { THEME_SWITCH: hasThemeFeature } = useFeatures();
   const localStorageTheme = useLocalStorageState<Theme>(localStorageKey.theme);
 
   const theme = computed<Theme | null>({

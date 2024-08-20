@@ -82,7 +82,7 @@ const url = useRequestURL();
 const { t } = useI18n();
 const localePath = useLocalePath();
 const articleReference = ref<HTMLDivElement>();
-const hasNavigationEnabled = useFeature("POST_NAVIGATION");
+const { POST_NAVIGATION: hasNavigationEnabled } = useFeatures();
 
 const postSlug = computed(() => getPostSlug(url));
 const contentQuery = queryContent<PostItemContent & MarkdownParsedContent>(postSlug.value);

@@ -55,7 +55,8 @@ const getNavigationUrl = (id: string) => `${route.path}#${encodeURI(id)}`;
 const getNavId = (anchor: string) => `nav-${anchor}`;
 
 watch(() => properties.modelValue, anchor => {
-  if (!useFeature("POST_NAVIGATION")) {
+  const { POST_NAVIGATION } = useFeatures();
+  if (!POST_NAVIGATION) {
     return;
   }
 
