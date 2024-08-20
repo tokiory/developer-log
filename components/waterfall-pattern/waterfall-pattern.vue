@@ -17,10 +17,12 @@ withDefaults(defineProps<WaterfallProperties>(), {
 </script>
 
 <style lang="scss" scoped>
+$waterfall-width: 200px;
+
 .waterfall {
   overflow: hidden;
   position: relative;
-  width: 300px;
+  width: $waterfall-width;
   height: 100%;
 
   &.heartbeat {
@@ -59,19 +61,23 @@ withDefaults(defineProps<WaterfallProperties>(), {
 
   &.lava {
     background: linear-gradient(180deg, #5968F4, #5d80fc, #5968F4);
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
     background-size: 100% 100vh;
-    animation: 3s linear rectangle infinite;
     &::after {
       position: absolute;
-      content: "";
       top: 0;
-      left: 10%;
-      right: 0;
-      bottom: 75%;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      content: "";
       background: linear-gradient(180deg, rgba(255, 101, 101, 0.00) 0%, #69adfa 100%);
-      border-radius: 100% 0 0 100%;
+      //border-radius: 100% 0 0 100%;
+      border-radius: 100%;
       background-blend-mode: color-burn;
-      animation: 40s linear rectangle-item infinite alternate;
+      animation: 30s linear rectangle-item infinite alternate;
+      will-change: transform, border-radius;
     }
   }
 
@@ -114,70 +120,41 @@ withDefaults(defineProps<WaterfallProperties>(), {
 
 @keyframes waterfall {
   from {
-    top: -50%;
-    bottom: 100%;
+    transform: translateY(0%)
   }
   to {
-    top: 100%;
-    bottom: -50%;
+    transform: translateY(calc(100vh + 300px))
   }
 }
 
 @keyframes circle {
   from {
-    right: 0;
+    transform: translateX(0)
   }
   to {
-    right: 100%;
-  }
-}
-
-@keyframes rectangle {
-  from {
-    background-position-y:0;
-  }
-  to {
-    background-position-y: 100vh;
+    transform: translateX(-$waterfall-width)
   }
 }
 
 @keyframes rectangle-item {
   from {
-    border-radius: 100% 0 0 100%;
-    left: 10%;
-    right: 0;
-
-    top: -25%;
-    bottom: 100%;
+    scale: 1;
   }
   33% {
-    top: 100%;
-    bottom: -25%;
-
-    border-radius: 0 100% 100% 0;
-    left: 0;
-    right: 10%;
+    transform: skew(2deg);
   }
-  34% {
-    left: 10%;
-    right: 0;
-    border-radius: 100% 0 0 100%;
+  50% {
+    rotate: 180deg;
+    transform: skewX(3deg) skewY(5deg);
+    scale: 0.88;
   }
   66% {
-    top: -25%;
-    bottom: 100%;
-
-    border-radius:  0 100% 100% 0;
-    left: 0;
-    right: 10%;
+    transform: skew(17deg);
   }
   to {
-    top: 100%;
-    bottom: -25%;
-
-    border-radius: 100% 0 0 100%;
-    left: 10%;
-    right: 0;
+    translate: 0 calc(100vh - 300px);
+    transform: skew(8deg);
+    scale: 1;
   }
 }
 

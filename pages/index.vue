@@ -127,10 +127,6 @@ const { data: posts } = await usePosts({ limit: 5, tagLimit: 2 });
 .waterfall {
   display: none;
   align-items: center;
-
-  &__item {
-    width: 200px;
-  }
 }
 
 @include from-md {
@@ -148,10 +144,6 @@ const { data: posts } = await usePosts({ limit: 5, tagLimit: 2 });
 @include from-xxl {
   .content__title {
     font-size: 72px !important;
-  }
-
-  .waterfall__item {
-    width: 250px;
   }
 }
 </style>
