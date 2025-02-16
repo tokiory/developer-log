@@ -24,4 +24,6 @@ watchEffect(() => {
     }
   });
 }, { flush: "post" });
+
+useOpenImageBySpaceKey();
 </script>
