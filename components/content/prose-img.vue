@@ -4,8 +4,12 @@
     :alt="alt"
     format="webp"
     lazy
+    tabindex="0"
     class="post-content-image"
     @click="showZoomPreview"
+    @focus="isFocused = true"
+    @blur="isFocused = false"
+    @keyup.space="handleSpaceKeyDown"
   />
 </template>
 
@@ -26,7 +30,43 @@ const fullpath = computed(() => {
 });
 
 const showZoomPreview = () => {
-  isZoomFeatureEnabled && imageZoom.show("image", fullpath.value) ;
+  if (isZoomFeatureEnabled) {
+    imageZoom.show("image", fullpath.value);
+    isZoomed.value = true;
+  }
+};
+
+const hideZoomPreview = () => {
+  if (isZoomFeatureEnabled) {
+    imageZoom.hide();
+    isZoomed.value = false;
+  }
+};
+
+// opening img by space key
+const isFocused = ref(false);
+const isZoomed = ref(false);
+
+const disableSpaceScroll = (event: KeyboardEvent) => {
+  if (event.code === "Space") {
+    event.preventDefault();
+  }
+};
+
+watch(isFocused, () => {
+  if (isFocused.value) {
+    document.addEventListener("keydown", disableSpaceScroll);
+    return;
+  }
+  document.removeEventListener("keydown", disableSpaceScroll);
+});
+
+const handleSpaceKeyDown = () => {
+  if (isZoomed.value) {
+    hideZoomPreview();
+    return;
+  }
+  showZoomPreview();
 };
 </script>
 
